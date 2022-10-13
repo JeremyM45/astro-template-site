@@ -1,4 +1,5 @@
 ---
+import BodyCard from '../components/BodyCard.astro';
 import Hero from '../components/Hero.astro';
 import Navbar from '../components/Navbar/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
@@ -13,7 +14,46 @@ import Layout from '../layouts/Layout.astro';
     description="Vivamus non suscipit lorem. Vivamus pretium, ante nec accumsan ornare, massa lorem bibendum nisl, vitae fermentum."
     imgSrc="./hero-stand-in.jpg"
     />
-  
+    <div class="">
+      <BodyCard 
+        title="Sed Eget"
+        header="Maecenas quis risus est Curabitur"
+        description="Morbi consequat, nisl interdum aliquet euismod, mauris dui tristique nulla, at malesuada mauris libero id risus."
+        imgSrc="./animeWoman.svg"
+        links={['Sed Id Erat', 'Aliquam Libero Ex', 'Donec In Massa', 'Nullam Ac Lobortis']}
+      />
+      <BodyCard 
+        title="Morbi Vestibulum"
+        header="Morbi id erat at nulla"
+        description="Morbi consequat, nisl interdum aliquet euismod, mauris dui tristique nulla, at malesuada mauris libero id risus."
+        imgSrc="./animeWoman.svg"
+        links={['Aliquam Ac Libero', 'Massa Ex Nullam']}
+        listItems={['Etiam venenatis libero elit vel', 'Cras ac eros in']}
+      />
+      <BodyCard 
+        title="Morbi Vestibulum"
+        header="Cras et quam at ligula"
+        description="Morbi consequat, nisl interdum aliquet euismod, mauris dui tristique nulla, at malesuada mauris libero id risus."
+        imgSrc="./animeWoman.svg"
+        links={['Aliquam Ac Libero', 'Massa Ex Nullam', 'Etiam venenatis libero elit vel', 'Aliquam Libero Ex']}
+      />
+      <BodyCard 
+        title="Morbi Vestibulum"
+        header="Morbi semper, erat nec laoreet vehicula"
+        description="Morbi consequat, nisl interdum aliquet euismod, mauris dui tristique nulla, at malesuada mauris libero id risus."
+        imgSrc="./animeWoman.svg"
+        links={['Aliquam Ac Libero', 'Massa Ex Nullam']}
+        listItems={['Etiam venenatis libero elit vel', 'Aliquam tincidunt']}
+      />
+      <BodyCard 
+        title="Morbi Vestibulum"
+        header="Aliquam at lectus id massa consequat"
+        description="Morbi consequat, nisl interdum aliquet euismod, mauris dui tristique nulla, at malesuada mauris libero id risus."
+        imgSrc="./animeWoman.svg"
+        links={['Aliquam Ac Libero']}
+        listItems={['Etiam venenatis libero elit vel', 'Aliquam tincidunt, lorem vitae', 'Cras ac eros in']}
+      />
+    </div>
 	</main>
 </Layout>
 
