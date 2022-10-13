@@ -4,6 +4,7 @@ export interface Props{
   links: string[];
 }
 const { title, links } = Astro.props;
+const twoCols = (links[3] != null ? true : false)
 ---
 <div class="relative group">
   <button class="flex flex-row border-b border-transparent items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:border-red-300 hover:text-red-300">
@@ -11,11 +12,19 @@ const { title, links } = Astro.props;
   </button>
   <div class="absolute z-10 hidden bg-grey-200 group-hover:block">
       
-      <div class="px-2 pt-2 pb-4 bg-white shadow-lg">
-        <div class="grid grid-cols-1 gap-4 p-2">
-          <ul>
+      <div class="px-2 w-60 pt-2 pb-4 bg-white shadow-lg rounded-lg">
+        <div >
+          <ul class={twoCols ? "grid grid-cols-2 gap-4 p-2" : "grid grid-cols-1 gap-4 p-2"}>
             {links.map(link => {
-              return <li><a href="/" class="flex flex-row p-2 border-b border-transparent hover:border-red-300 hover:text-red-300">{link}</a></li>
+              return (
+                  <li>
+                    <div class="">
+                      <a href="/" class="flex flex-row mr-6 p-2 border-b border-transparent hover:border-red-300 hover:text-red-300">
+                        <span>{link}</span>
+                      </a>
+                    </div>
+                  </li>
+                )
             })}
           </ul>
         </div>
