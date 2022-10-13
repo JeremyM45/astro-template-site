@@ -1,6 +1,76 @@
 ---
 import DropMenus from "./DropMenus.astro"
 import DynamicDropDown from './DynamicDropDown'
+
+const cardData = [
+    {
+      title: 'name',
+      listItems: ['Business Managment', 'Location Managment', 'Client Experience', 'Marketing', 'Payment'],
+      cards: [
+        {
+          cardTitle: 'Nam ullamcorper',
+          cardDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida tincidunt nisi, ultrices ullamcorper augue. Pellentesque quis ipsum lorem. Nulla.'
+        },
+        {
+          cardTitle: 'Lorem ipsum dolor',
+          cardDescription: 'Proin molestie dui dui, ac tempor mi pretium eu. Proin elit diam, porttitor ut venenatis sed, vulputate mattis justo. In.'
+        },
+        {
+          cardTitle: 'Pellentesque quam metus',
+          cardDescription: 'Vivamus venenatis elit volutpat sapien malesuada rutrum. Suspendisse non imperdiet lectus, nec porta tellus. Donec hendrerit quam nunc, sed dignissim dolor faucibus eu. Vestibulum.'
+        },
+        {
+          cardTitle: 'Cras vel ligula',
+          cardDescription: 'Duis tortor nisl, placerat quis finibus convallis, vehicula non erat. Vestibulum rhoncus leo quis dui efficitur lacinia. Maecenas.'
+        }
+      ],
+    },
+    {
+      title: 'other name',
+      listItems: ['Business Managment', 'Client Experience', 'Marketing', 'Payment'],
+      cards: [
+        {
+          cardTitle: 'Lorem ipsum dolor',
+          cardDescription: 'Duis tortor nisl, placerat quis finibus convallis, vehicula non erat. Vestibulum rhoncus leo quis dui efficitur lacinia. Maecenas.'
+        },
+        {
+          cardTitle: 'Pellentesque quam metus',
+          cardDescription: 'Proin molestie dui dui, ac tempor mi pretium eu. Proin elit diam, porttitor ut venenatis sed, vulputate mattis justo. In.'
+        },
+        {
+          cardTitle: 'Nam ullamcorper',
+          cardDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida tincidunt nisi, ultrices ullamcorper augue. Pellentesque quis ipsum lorem. Nulla.'
+        },
+        {
+          cardTitle: 'Cras vel ligula',
+          cardDescription: 'Vivamus venenatis elit volutpat sapien malesuada rutrum. Suspendisse non imperdiet lectus, nec porta tellus. Donec hendrerit quam nunc, sed dignissim dolor faucibus eu. Vestibulum'
+        }
+      ],
+    },
+    {
+      title: 'Harry',
+      listItems: ['Business Managment', 'Location Managment', 'Client Experience', 'Payment'],
+      cards: [
+        {
+          cardTitle: 'Pellentesque quam metus',
+          cardDescription: 'Proin molestie dui dui, ac tempor mi pretium eu. Proin elit diam, porttitor ut venenatis sed, vulputate mattis justo. In.'
+        },
+        {
+          cardTitle: 'Nam ullamcorper',
+          cardDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida tincidunt nisi, ultrices ullamcorper augue. Pellentesque quis ipsum lorem. Nulla.'
+        },
+        {
+          cardTitle: 'Cras vel ligula',
+          cardDescription: 'Vivamus venenatis elit volutpat sapien malesuada rutrum. Suspendisse non imperdiet lectus, nec porta tellus. Donec hendrerit quam nunc, sed dignissim dolor faucibus eu. Vestibulum.'
+        },
+        {
+          cardTitle: 'Lorem ipsum dolor',
+          cardDescription: 'Duis tortor nisl, placerat quis finibus convallis, vehicula non erat. Vestibulum rhoncus leo quis dui efficitur lacinia. Maecenas.'
+        }
+      ],
+    },
+  ]
+  
 ---
 
 <nav class='relative flex items-center justify-between h-14 drop-shadow-md px-20 mx-auto border-b border-slate-300'>
@@ -11,7 +81,8 @@ import DynamicDropDown from './DynamicDropDown'
       </a>
     </div>
     <div class="hidden pl-20 space-x-10 md:flex">
-      <DynamicDropDown title='First Dropdown' links={['name', 'Other Name', "Harry"]} client:visible/>
+      
+      <DynamicDropDown cardData={cardData} client:visible/>
 
       <DropMenus title='Second Dropdown' links={['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5', 'Thing 6']}/>
 
