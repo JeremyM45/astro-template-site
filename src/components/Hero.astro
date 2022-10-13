@@ -1,7 +1,20 @@
+---
+export interface Props{
+  title: string;
+  description: string;
+  imgSrc: string;
+}
+const { title, description, imgSrc} = Astro.props
+---
 <section id='hero'>
-  <div class="container flex flex-row mx-auto mt-8">
-    <div class="m-auto">
-      <h1 class="max-w-md font-bold text-5xl">Salon Site</h1>
+  <div class='bg-gray-200 flex flex-col-reverse items-center px-12 mx-auto mt-10 space-y-0 md:space-y-0 md:flex-row'>
+    <div class='flex flex-col mb-32 space-y-12 px-8 pt-12 md:w-1/2'>
+      <p class='max-w-lg text-center -mb-8 text-gray-500 md:text-left'>Salon Site</p>
+      <h1 class='max-w-lg text-4xl font-bold text-center md:text-5xl md:text-left'>{title}</h1>
+      <p class="max-w-md text-center md:text-left md:text-xl">{description}</p>
+    </div>
+    <div class="md:w-1/2 p-6">
+      <img src={imgSrc}/>
     </div>
   </div>
 </section>
