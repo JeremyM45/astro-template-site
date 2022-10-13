@@ -2,16 +2,13 @@ import { useState } from 'react'
 import DynamicDropMenuItem from './DynamicDropMenuItem';
 
 export default function DynamicDropDown({ cardData }){
-  
   const [isVisible, setIsVisible] = useState(false);
-  const [visibleCompnent, setvisibleCompnent] = useState(0);
+  const [visibleCompnent, setvisibleCompnent] = useState();
   const [componenData, setComponentData] = useState({});
   
   function handleDynamicMenu(data){
-    console.log(data)
-    if(!isVisible){console.log('test visable'), setIsVisible(true)}
-    if(visibleCompnent != data.key){console.log('component'), setvisibleCompnent(data.key)}
-    if(componenData != data){console.log('test data'), setComponentData(data)}
+    if(!isVisible){setIsVisible(true)}
+    if(visibleCompnent != data.key){setvisibleCompnent(data.key), setComponentData(data)}
   }
 
   return (
