@@ -1,0 +1,26 @@
+---
+export interface Props{
+  buttonNames: string[];
+}
+const { buttonNames } = Astro.props
+---
+<section id="buttons">
+  <div class=" flex flex-col justify-center md:flex-row">
+    <h1 class="text-3xl font-bold">Sed Ac Lorem</h1>
+  </div>
+  <div class="container mt-12 mx-auto grid grid-cols-1 md:grid-cols-6">
+    {buttonNames.map(buttonName => {
+      return(
+        <a href="/" class="mt-4 flex items-center m-auto">
+          
+          <button class="flex items-center ">
+            <div class="m-auto  py-2 w-40 border border-slate-300 rounded-lg hover:bg-slate-200">
+              <p>{buttonName}</p>
+            </div>
+          </button>
+        </a>
+      )
+    })}
+  </div>
+  
+</section>
