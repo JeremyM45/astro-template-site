@@ -4,7 +4,7 @@ import ButtonsCard from '../components/ButtonsCard.astro';
 import Hero from '../components/Hero.astro';
 import Navbar from '../components/Navbar/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
-
+import Form from '../components/Form/Form'
 ---
 
 <Layout title="">
@@ -56,6 +56,7 @@ import Layout from '../layouts/Layout.astro';
     <ButtonsCard 
       buttonNames={['In accumsan', 'Pellentesque', 'Quisque', 'Pellentesque congue', 'Nullam', 'Proin vitae', 'Aliquam', 'Euismod', 'Nullam', 'In accumsan', 'Proin vitae', 'Pellentesque congue']}
     />
+    <Form client:visible/>
 	</main>
 </Layout>
 
