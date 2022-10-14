@@ -13,7 +13,7 @@ export default function DynamicDropMenuItem({ isVisible, data, visibleComponent 
                     ;
                     return(
                     <li key={i} className="mt-4 w-full">
-                    <a href="#" className="border-b border-transparent hover:border-red-300 hover:text-red-300">{item}</a>
+                    <a href="#" className="border-b border-transparent hover:border-highlightRed hover:text-highlightRed">{item}</a>
                   </li>
                   )
                   })}
