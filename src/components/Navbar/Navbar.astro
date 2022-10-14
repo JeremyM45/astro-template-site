@@ -72,23 +72,22 @@ const cardData = [
   ]
   
 ---
-
-<nav class='relative flex md:items-center justify-between h-14 drop-shadow-md px-20 mx-auto border-b border-slate-300'>
-  <div class="-ml-16 flex">
-    <div class='pt-3 pr-12 md:pt-4'>
-      <a href="/">
-        Company Logo
+<!-- relative flex h-14 drop-shadow-md px-20 mx-auto border-b border-slate-300 md:items-center -->
+<nav class='bg-gray-200 drop-shadow-md h-14'>
+  <div class="flex flex-row md:flex-col xl:flex-row">
+      <a class='left-0 flex flex-cols-2 gap-x-0 m-1' href="/">
+        <img class="w-12 ml-2 rounded-md" src='./logo.png'/>
+        <h1 class="hidden font-bold mt-2 text-xl md:flex"><span class="text-highlightRed">Company</span> Name</h1>
       </a>
-    </div>
-    <div class="hidden pl-20 space-x-10 md:flex">
+    <div class="hidden space-x-10 md:flex xl:pl-20">
       
       <DynamicDropDown cardData={cardData} client:visible/>
 
       <DropMenus title='Second Dropdown' links={['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5', 'Thing 6']}/>
 
-      <a href="#" class="flex flex-row border-b border-transparent items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:border-highlightRed hover:text-highlightRed">Item 1</a>
+      <a href="#" class="flex flex-row border-b border-transparent items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:border-highlightRed hover:text-highlightRed">Item 1</a>
       
-      <a href="#" class="flex flex-row border-b border-transparent items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:border-highlightRed hover:text-highlightRed">Item 2</a>
+      <a href="#" class="flex flex-row border-b border-transparent items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:border-highlightRed hover:text-highlightRed">Item 2</a>
     </div>
   </div>
 </nav>

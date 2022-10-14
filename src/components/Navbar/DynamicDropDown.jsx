@@ -15,7 +15,7 @@ export default function DynamicDropDown({ cardData }){
     <div onMouseLeave={() => setIsVisible(false)}>
       <div className="relative group" >
         
-        <button className="flex flex-row border-b border-transparent items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:border-highlightRed hover:text-highlightRed">
+        <button className="flex flex-row border-b border-transparent items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:border-highlightRed hover:text-highlightRed">
             <span>Dynamic Dropdown</span>
         </button>
         <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
