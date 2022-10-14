@@ -56,7 +56,10 @@ import Form from '../components/Form/Form'
     <ButtonsCard 
       buttonNames={['In accumsan', 'Pellentesque', 'Quisque', 'Pellentesque congue', 'Nullam', 'Proin vitae', 'Aliquam', 'Euismod', 'Nullam', 'In accumsan', 'Proin vitae', 'Pellentesque congue']}
     />
-    <Form client:visible/>
+    <div class="flex justify-center">
+        <Form isPopup={false} client:visible/>
+    </div>
+    
 	</main>
 </Layout>
 
