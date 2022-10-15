@@ -5,6 +5,26 @@ import Hero from '../components/Hero.astro';
 import Navbar from '../components/Navbar/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import Form from '../components/Form/Form'
+import Footer from '../components/Footer.astro';
+
+const FOOTER_DATA = [
+  {
+    title: 'Title 1', 
+    listItems: ['Thing 1', 'Thing 2', 'Thing 3']
+  },
+  {
+    title: 'Title 2', 
+    listItems: ['Thing 1', 'Thing 2', 'Thing 3']
+  },
+  {
+    title: 'Title 3', 
+    listItems: ['Thing 1', 'Thing 2', 'Thing 3']
+  },
+  {
+    title: 'Title 4', 
+    listItems: ['Thing 1', 'Thing 2', 'Thing 3']
+  }
+]
 ---
 
 <Layout title="">
@@ -59,7 +79,7 @@ import Form from '../components/Form/Form'
     <div class="flex justify-center">
         <Form isPopup={false} client:visible/>
     </div>
-    
+    <Footer lists={FOOTER_DATA}/>
 	</main>
 </Layout>
 
