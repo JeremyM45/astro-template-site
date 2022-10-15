@@ -1,6 +1,7 @@
 ---
 import DropMenus from "./DropMenus.astro"
 import DynamicDropDown from './DynamicDropDown'
+import SignupButton from '.././SignupButton'
 
 const cardData = [
     {
@@ -88,6 +89,13 @@ const cardData = [
       <a href="#" class="flex flex-row border-b border-transparent items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:border-highlightRed hover:text-highlightRed">Item 1</a>
       
       <a href="#" class="flex flex-row border-b border-transparent items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:border-highlightRed hover:text-highlightRed">Item 2</a>
+      
     </div>
+    <div class="absolute right-4 mt-2">
+      <SignupButton client:visible/>
+    </div>
+    
   </div>
+
+  
 </nav>

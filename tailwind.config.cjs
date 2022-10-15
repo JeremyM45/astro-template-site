@@ -10,7 +10,8 @@ module.exports = {
     },
 		extend: {
       colors: {
-        highlightRed: '#FF6060', 
+        highlightRed: '#FF6060',
+        dimBackground: 'rgba(0, 0, 0, 0.5)'
       },
     },
 	},

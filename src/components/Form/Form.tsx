@@ -4,8 +4,9 @@ import AddressForm from "./AddressForm"
 import NameForm from "./NameForm"
 import useForm from "./useForm"
 
-type isPopup = {
-  isPopup: boolean
+type FormProps = {
+  isPopup: boolean;
+  handleClose: () => void;
 }
 
 type FormData = {
@@ -31,7 +32,7 @@ const STARTING_DATA: FormData = {
   userName: ''
 }
 
-export default function Form({ isPopup }: isPopup){
+export default function Form({ isPopup, handleClose }: FormProps){
   const [ data, setData ] = useState(STARTING_DATA)
 
   function updateFields(fieldsData: Partial<FormData>){
@@ -39,7 +40,7 @@ export default function Form({ isPopup }: isPopup){
       return {...prevData, ...fieldsData}
     })
   }
-  const { steps, currentStepIndex, step, isNotFirstStep, isLastStep, back, next } = useForm([
+  const { steps, currentStepIndex, step, isNotFirstStep, isLastStep, back, next, goTo } = useForm([
     <NameForm {...data} updateField={updateFields} isPopup={isPopup}/>, 
     <AddressForm {...data} updateField={updateFields} isPopup={isPopup}/>, 
     <AccountForm {...data} updateField={updateFields} isPopup={isPopup}/>
@@ -51,14 +52,16 @@ export default function Form({ isPopup }: isPopup){
     alert("Finished form! Check console for data")
     console.log(data)
     setData(STARTING_DATA)
+    goTo(0)
   }
 
   return(
     <div>
-      <div className="relative bg-red-300 border h-80 w-80 pt-8 px-8 mx-4 mt-8 rounded-xl">
-        <h1 className='text-center font-bold -mt-6'>Sign Up</h1>
+      <div className="relative bg-gradient-to-b from-red-300 to-red-400 h-80 w-80 p-6 rounded-xl">
+        {isPopup ? <button className="absolute right-0 top-0 rounded-full px-2 pb-1 border-red-300 bg-red-300 hover:bg-highlightRed" onClick={handleClose}>x</button> : <></>}
+        <h1 className='text-center font-bold -mt-6 text-lg'>Sign Up</h1>
         <form onSubmit={onSubmit}>
-          <div className='absolute top-2 right-2 font-bold'>
+          <div className='absolute bottom-2 left-4 font-bold'>
             {currentStepIndex + 1}/{steps.length}
           </div>
           {step}
