@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import Form from '../components/Form/Form'
 import Footer from '../components/Footer.astro';
+import VideoPlayer from '../components/VideoPlayer';
 
 const FOOTER_DATA = [
   {
@@ -81,6 +82,9 @@ const FOOTER_DATA = [
     />
     <div class="flex justify-center">
         <Form isPopup={false} client:visible/>
+    </div>
+    <div class="flex justify-center mt-20">
+      <VideoPlayer videoId="LnG7LdAsbnw" client:visible/>
     </div>
     <Footer lists={FOOTER_DATA}/>
 	</main>

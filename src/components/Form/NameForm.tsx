@@ -14,7 +14,7 @@ export default function NameForm({ firstName, lastName, updateField, isPopup}: N
   return(
     <FormWrapper title="User Details">
       <div className='grid gap-2 justify-start grid-cols-1'>
-        <label className='mt-6'>First Name</label>
+        <label className='font-bold mt-6'>First Name</label>
         <input 
           className='border border-gray-500' 
           autoFocus={isPopup}  
@@ -23,7 +23,7 @@ export default function NameForm({ firstName, lastName, updateField, isPopup}: N
           value={firstName} 
           onChange={e => updateField({ firstName: e.target.value })}
         />
-        <label className='mt-6'>Last Name</label>
+        <label className='font-bold mt-6'>Last Name</label>
         <input 
           className='border border-gray-500' 
           required 

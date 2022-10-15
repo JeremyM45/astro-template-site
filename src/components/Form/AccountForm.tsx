@@ -15,7 +15,7 @@ export default function AccountForm({ email, password, userName, updateField, is
   return(
     <FormWrapper title="Account Details">
       <div className='grid gap-2 justify-start grid-cols-1'>
-        <label>Email</label>
+        <label className='font-bold'>Email</label>
         <input 
           className='border border-gray-500' 
           autoFocus={isPopup}  
@@ -24,7 +24,7 @@ export default function AccountForm({ email, password, userName, updateField, is
           value={email}
           onChange={e => updateField({email: e.target.value})}
           />
-        <label>Password</label>
+        <label className='font-bold'>Password</label>
         <input 
           className='border border-gray-500' 
           required 
@@ -32,7 +32,7 @@ export default function AccountForm({ email, password, userName, updateField, is
           value={password}
           onChange={e => updateField({password: e.target.value})}
         />
-        <label>User Name</label>
+        <label className='font-bold'>User Name</label>
         <input 
           className='border border-gray-500' 
           required 

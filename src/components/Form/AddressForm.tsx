@@ -15,7 +15,7 @@ export default function AddressForm({ street, city, state, zip, updateField, isP
   return(
     <FormWrapper title="Address Details">
       <div className='grid gap-2 justify-start grid-cols-2  '>
-        <label className="my-2" >Street</label>
+        <label className="font-bold my-2" >Street</label>
         <input 
           className='border border-gray-500 my-2 -ml-12 ' 
           autoFocus={isPopup} 
@@ -24,7 +24,7 @@ export default function AddressForm({ street, city, state, zip, updateField, isP
           value={street}
           onChange={e => updateField({ street: e.target.value })}
         />
-        <label className="my-2">City</label>
+        <label className="font-bold my-2">City</label>
         <input 
           className='border border-gray-500 my-2 -ml-12'
           required 
@@ -32,7 +32,7 @@ export default function AddressForm({ street, city, state, zip, updateField, isP
           value={city}
           onChange={e => updateField({ city: e.target.value })}
         />
-        <label className="my-2">State</label>
+        <label className="font-bold my-2">State</label>
         <input 
           className='border border-gray-500 my-2 -ml-12' 
           required 
@@ -40,7 +40,7 @@ export default function AddressForm({ street, city, state, zip, updateField, isP
           value={state}
           onChange={e => updateField({ state: e.target.value })}
         />
-        <label className="my-2">Zip</label>
+        <label className="font-bold my-2">Zip</label>
         <input 
           className='border border-gray-500 my-2 -ml-12' 
           required 

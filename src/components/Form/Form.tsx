@@ -50,22 +50,27 @@ export default function Form({ isPopup }: isPopup){
     if(!isLastStep) return next()
     alert("Finished form! Check console for data")
     console.log(data)
+    setData(STARTING_DATA)
   }
 
   return(
-    <div className="relative bg-white border h-80 w-80 border-black pt-8 px-8 mx-4 mt-8 rounded-lg">
-      <form onSubmit={onSubmit}>
-        <div className='absolute top-2 right-2'>
-          {currentStepIndex + 1}/{steps.length}
-        </div>
-        {step}
-        
-        <div className='m-4 flex justify-end gap-2'>
-          {isNotFirstStep && <button onClick={back} type='button' className='absolute bottom-4 right-24 border-black border px-4 rounded-md text-sm hover:text-white hover:bg-highlightRed'>Back</button>}
-          <button type='submit' className='absolute bottom-4 right-4 border-black border px-4 rounded-md text-sm hover:text-white hover:bg-highlightRed'>{isLastStep ?'Finish' : 'Next'}</button>
+    <div>
+      <div className="relative bg-red-300 border h-80 w-80 pt-8 px-8 mx-4 mt-8 rounded-xl">
+        <h1 className='text-center font-bold -mt-6'>Sign Up</h1>
+        <form onSubmit={onSubmit}>
+          <div className='absolute top-2 right-2 font-bold'>
+            {currentStepIndex + 1}/{steps.length}
+          </div>
+          {step}
           
-        </div>
-      </form>
+          <div className='m-4 flex justify-end gap-2'>
+            {isNotFirstStep && <button onClick={back} type='button' className='absolute bottom-4 right-24 border-gray-900 border-2 px-4 rounded-md text-sm hover:text-white hover:bg-highlightRed'>Back</button>}
+            <button type='submit' className='absolute bottom-4 right-4 border-gray-900 border-2 font-bold px-4 rounded-md text-sm hover:text-white hover:bg-highlightRed'>{isLastStep ?'Finish' : 'Next'}</button>
+            
+          </div>
+        </form>
+      </div>
     </div>
+    
   )
 }
